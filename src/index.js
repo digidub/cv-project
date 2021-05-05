@@ -1,14 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import PlaceHolder from './Components/Name-Holder';
+import TitleContainer from './Components/TitleContainer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PlaceHolder name='Enter Name Here' />
-    <PlaceHolder name='Telephone Number' />
-    <PlaceHolder name='Email' />
-    <PlaceHolder name='Website' />
+    <TitleContainer />
   </React.StrictMode>,
   document.getElementById('root')
 );
