@@ -3,9 +3,8 @@ import React from 'react';
 class EditBox extends React.Component {
   constructor(props) {
     super(props);
-
+    this.input = React.createRef();
     this.state = {
-      editMode: false,
       value: '',
     };
   }
@@ -14,12 +13,25 @@ class EditBox extends React.Component {
     this.setState({ value: e.target.value });
   };
 
+  componentDidMount = () => {
+    this.input.current.focus();
+  };
+
+  handleKeyPress = (e) => {
+    if (e.keyCode !== 13) return;
+    this.props.save();
+  };
+
   render() {
     return (
       <div>
-        <input type='text' defaultValue={this.props.value} onChange={this.handleChange} />
-        <button onClick={this.props.save}>save</button>
+        <form>
+          <input type='text' defaultValue={this.props.original} onChange={this.handleChange} ref={this.input} />
+          <input type='submit' onClick={this.props.save} value='save' />
+        </form>
       </div>
     );
   }
 }
+
+export default EditBox;
