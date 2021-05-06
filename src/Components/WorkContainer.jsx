@@ -17,3 +17,5 @@ class WorkExperienceContainer extends React.Component {
     );
   }
 }
+
+export default WorkExperienceContainer;
