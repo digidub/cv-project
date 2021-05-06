@@ -2,10 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import TitleContainer from './Components/TitleContainer';
+import DocumentContainer from './Components/DocumentContainer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TitleContainer />
+    <DocumentContainer>
+      <TitleContainer />
+    </DocumentContainer>
   </React.StrictMode>,
   document.getElementById('root')
 );
