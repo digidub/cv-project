@@ -2,11 +2,6 @@ import React from 'react';
 import Placeholder from './ValuePlaceholder';
 
 class TitleContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { skills: [] };
-  }
-
   render() {
     return (
       <div>
