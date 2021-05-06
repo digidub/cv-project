@@ -1,95 +1,37 @@
 import React from 'react';
-import PlaceHolder from './Name-Holder';
+import Placeholder from './ValuePlaceholder';
+import maxKeyInArray from './AppLogic';
 
 class SkillsContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { skills: [] };
+    this.state = {
+      placeholder: [
+        { id: 1, name: 'JavaScript' },
+        { id: 2, name: 'NPM' },
+        { id: 3, name: 'Webpack' },
+        { id: 4, name: 'React' },
+      ],
+    };
   }
+
+  handleClick = () => {
+    const x = maxKeyInArray(this.state.placeholder);
+    this.setState((state) => ({
+      placeholder: state.placeholder.concat({ id: x + 1, name: 'enter name here' }),
+    }));
+  };
 
   render() {
-    return <button>Add</button>;
-  }
-}
-
-class WorkExperienceContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { skills: [] };
-  }
-
-  render() {
+    const placeholderItems = this.state.placeholder.map((name, index) => {
+      return <Placeholder name={name.name} key={name.id} />;
+    });
     return (
       <div>
-        <div>
-          <h2>Work Experience</h2>
-        </div>
-        <button>Add</button>
+        <h2>Skills</h2>
+        {placeholderItems}
+        <button onClick={this.handleClick}>Add</button>
       </div>
     );
   }
 }
-
-class JobContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { skills: [] };
-  }
-
-  render() {
-    return (
-      <div>
-        <PlaceHolder name='Enter Job Name' />
-        <PlaceHolder name='Enter Job Title' />
-        <PlaceHolder name='From' />
-        <PlaceHolder name='To' />
-        <PlaceHolder name='Enter Some Details on Your Responsibilites/Achievements Here' />
-        <PlaceHolder name='Enter Some Details on Your Responsibilites/Achievements Here' />
-        <PlaceHolder name='Enter Some Details on Your Responsibilites/Achievements Here' />
-        <button>Add</button>
-      </div>
-    );
-  }
-}
-
-class EducationContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { skills: [] };
-  }
-
-  render() {
-    return (
-      <div>
-        <div>
-          <h2>Education History</h2>
-        </div>
-        <button>Add</button>
-      </div>
-    );
-  }
-}
-
-class EduContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { skills: [] };
-  }
-
-  render() {
-    return (
-      <div>
-        <PlaceHolder name='Enter Qualification Name' />
-        <PlaceHolder name='Enter Education Body' />
-        <PlaceHolder name='From' />
-        <PlaceHolder name='To' />
-        <PlaceHolder name='Enter Some Details on Your Achievements Here' />
-        <PlaceHolder name='Enter Some Details on Your Achievements Here' />
-        <PlaceHolder name='Enter Some Details on Your Achievements Here' />
-        <button>Add</button>
-      </div>
-    );
-  }
-}
-
-export default SkillsContainer;
