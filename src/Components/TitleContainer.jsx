@@ -20,7 +20,6 @@ class TitleContainer extends React.Component {
     this.setState((state) => ({
       placeholder: state.placeholder.concat({ id: x + 1, name: 'enter name here' }),
     }));
-    console.log(this.state);
   };
 
   render() {
