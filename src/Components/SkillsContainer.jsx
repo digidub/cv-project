@@ -35,3 +35,5 @@ class SkillsContainer extends React.Component {
     );
   }
 }
+
+export default SkillsContainer;
