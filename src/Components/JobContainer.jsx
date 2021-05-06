@@ -1,4 +1,5 @@
 import React from 'react';
+import Placeholder from './ValuePlaceholder';
 
 class JobContainer extends React.Component {
   constructor(props) {
