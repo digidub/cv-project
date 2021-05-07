@@ -5,7 +5,7 @@ import DisplayBox from './Display-Box';
 class Placeholder extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { editMode: false, value: this.props.name };
+    this.state = { editMode: this.props.edit ?? false, value: this.props.name };
   }
 
   handleClick = () => {
