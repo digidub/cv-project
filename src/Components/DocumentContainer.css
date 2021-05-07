@@ -4,9 +4,12 @@
   align-items: center;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   max-width: 780px;
   border: 1px solid #aaa;
   border-radius: 2px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
   padding: 1em;
+  min-height: 90vh;
 }
