@@ -20,12 +20,20 @@ class EduContainer extends React.Component {
       return <Placeholder key={qual.id} name={qual.name} edit={qual.edit ?? false} />;
     });
     return (
-      <div>
-        <Placeholder name='Enter Qualification Name' />
-        <Placeholder name='Enter Education Body' />
-        <Placeholder name='From' />
-        <Placeholder name='To' />
-        {quals}
+      <div className='edu-container'>
+        <div className='edu-heading'>
+          <div className='edu-title'>
+            <Placeholder name='Enter Education Body' />
+            <p> - </p>
+            <Placeholder name='Enter Qualification Name' />
+          </div>
+          <div className='edu-from-to'>
+            <Placeholder name='From' />
+            <p> - </p>
+            <Placeholder name='To' />
+          </div>
+        </div>
+        <div className='edu-roles'>{quals}</div>
         <button onClick={this.handleClick}>Add Row</button>
       </div>
     );
