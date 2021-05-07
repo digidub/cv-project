@@ -1,6 +1,7 @@
 import React from 'react';
 import maxKeyInArray from './AppLogic';
 import JobContainer from './JobContainer';
+import './WorkExperienceContainer.css';
 
 class WorkExperienceContainer extends React.Component {
   constructor(props) {
@@ -20,12 +21,12 @@ class WorkExperienceContainer extends React.Component {
       return <JobContainer key={job.id} />;
     });
     return (
-      <div>
-        <div>
+      <div className='work-experience-container'>
+        <div className='work-experience-heading'>
           <h2>Work Experience</h2>
+          <button onClick={this.handleClick}>Add</button>
         </div>
-        <div>{jobs}</div>
-        <button onClick={this.handleClick}>Add</button>
+        <div className='jobs-list'>{jobs}</div>
       </div>
     );
   }
