@@ -26,7 +26,7 @@ class EditBox extends React.Component {
     return (
       <div>
         <form>
-          <input type='text' defaultValue={this.props.original} onChange={this.handleChange} ref={this.input} />
+          <input type='text' defaultValue={this.props.original} onChange={this.handleChange} ref={this.input} onFocus={(e) => e.target.select()} />
           <input type='submit' onClick={this.props.save} value='save' />
         </form>
       </div>
