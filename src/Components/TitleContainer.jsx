@@ -7,12 +7,12 @@ class TitleContainer extends React.Component {
     return (
       <div className='title-container'>
         <div className='name'>
-          <Placeholder name='Your Name' className='heading' />
+          <Placeholder name='Your Name' className='heading' canEdit={this.props.canEdit} />
         </div>
         <div className='contact-details'>
-          <Placeholder name='Telephone' />
-          <Placeholder name='Email' />
-          <Placeholder name='Website' />
+          <Placeholder name='Telephone' canEdit={this.props.canEdit} />
+          <Placeholder name='Email' canEdit={this.props.canEdit} />
+          <Placeholder name='Website' canEdit={this.props.canEdit} />
         </div>
       </div>
     );

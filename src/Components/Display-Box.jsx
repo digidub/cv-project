@@ -14,10 +14,12 @@ class DisplayBox extends React.Component {
   };
 
   render() {
+    let canEdit;
+    if (this.props.canEdit) canEdit = <button onClick={this.props.edit}>edit</button>;
     return (
       <div>
         {this.props.value}
-        <button onClick={this.props.edit}>edit</button>
+        {canEdit}
       </div>
     );
   }

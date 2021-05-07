@@ -18,7 +18,7 @@ class EduExperienceContainer extends React.Component {
 
   render() {
     const edus = this.state.edus.map((edu) => {
-      return <EduContainer key={edu.id} />;
+      return <EduContainer key={edu.id} canEdit={this.props.canEdit} />;
     });
     return (
       <div className='edu-experience-container'>

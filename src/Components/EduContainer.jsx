@@ -18,20 +18,20 @@ class EduContainer extends React.Component {
 
   render() {
     const quals = this.state.quals.map((qual) => {
-      return <Placeholder key={qual.id} name={qual.name} edit={qual.edit ?? false} />;
+      return <Placeholder key={qual.id} name={qual.name} edit={qual.edit ?? false} canEdit={this.props.canEdit} />;
     });
     return (
       <div className='edu-container'>
         <div className='edu-heading'>
           <div className='edu-title'>
-            <Placeholder name='Enter Education Body' />
+            <Placeholder name='Enter Education Body' canEdit={this.props.canEdit} />
             <p> - </p>
-            <Placeholder name='Enter Qualification Name' />
+            <Placeholder name='Enter Qualification Name' canEdit={this.props.canEdit} />
           </div>
           <div className='edu-from-to'>
-            <Placeholder name='From' />
+            <Placeholder name='From' canEdit={this.props.canEdit} />
             <p> - </p>
-            <Placeholder name='To' />
+            <Placeholder name='To' canEdit={this.props.canEdit} />
           </div>
         </div>
         <div className='edu-roles'>{quals}</div>

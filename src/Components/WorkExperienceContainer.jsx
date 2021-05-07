@@ -18,7 +18,7 @@ class WorkExperienceContainer extends React.Component {
 
   render() {
     const jobs = this.state.jobs.map((job) => {
-      return <JobContainer key={job.id} />;
+      return <JobContainer key={job.id} canEdit={this.props.canEdit} />;
     });
     return (
       <div className='work-experience-container'>

@@ -25,7 +25,7 @@ class SkillsContainer extends React.Component {
 
   render() {
     const placeholderItems = this.state.placeholder.map((name, index) => {
-      return <Placeholder name={name.name} key={name.id} />;
+      return <Placeholder name={name.name} key={name.id} canEdit={this.props.canEdit} />;
     });
     return (
       <div className='skills-container'>

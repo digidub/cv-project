@@ -24,20 +24,20 @@ class JobContainer extends React.Component {
 
   render() {
     const roles = this.state.roles.map((role) => {
-      return <Placeholder key={role.id} name={role.name} edit={role.edit ?? false} />;
+      return <Placeholder key={role.id} name={role.name} edit={role.edit ?? false} canEdit={this.props.canEdit} />;
     });
     return (
       <div className='job-container'>
         <div className='job-heading'>
           <div className='job-title'>
-            <Placeholder name='Enter Company Name' />
+            <Placeholder name='Enter Company Name' canEdit={this.props.canEdit} />
             <p> - </p>
-            <Placeholder name='Enter Job Title' />
+            <Placeholder name='Enter Job Title' canEdit={this.props.canEdit} />
           </div>
           <div className='job-from-to'>
-            <Placeholder name='From' />
+            <Placeholder name='From' canEdit={this.props.canEdit} />
             <p> - </p>
-            <Placeholder name='To' />
+            <Placeholder name='To' canEdit={this.props.canEdit} />
           </div>
         </div>
         <div className='job-roles'>{roles}</div>

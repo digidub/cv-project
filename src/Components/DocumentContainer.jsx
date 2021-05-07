@@ -4,10 +4,18 @@ import './DocumentContainer.css';
 class DocumentContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { canEdit: true };
   }
   render() {
-    return <div className='document-container'>{this.props.children}</div>;
+    return (
+      <div className='document-container'>
+        {React.Children.map(this.props.children, (child) => {
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, { canEdit: this.state.canEdit });
+          }
+        })}
+      </div>
+    );
   }
 }
 
