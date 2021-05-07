@@ -1,6 +1,7 @@
 import React from 'react';
 import Placeholder from './ValuePlaceholder';
 import maxKeyInArray from './AppLogic';
+import './SkillsContainer.css';
 
 class SkillsContainer extends React.Component {
   constructor(props) {
@@ -27,10 +28,12 @@ class SkillsContainer extends React.Component {
       return <Placeholder name={name.name} key={name.id} />;
     });
     return (
-      <div>
-        <h2>Skills</h2>
-        {placeholderItems}
-        <button onClick={this.handleClick}>Add</button>
+      <div className='skills-container'>
+        <div className='skills-heading'>
+          <h2>Skills</h2>
+          <button onClick={this.handleClick}>Add</button>
+        </div>
+        <div className='skills-list'>{placeholderItems}</div>
       </div>
     );
   }
