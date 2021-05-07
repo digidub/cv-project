@@ -15,21 +15,20 @@ class TitleContainer extends React.Component {
     };
   }
 
-  handleClick = () => {
-    const x = maxKeyInArray(this.state.placeholder);
-    this.setState((state) => ({
-      placeholder: state.placeholder.concat({ id: x + 1, name: 'enter name here' }),
-    }));
-  };
-
   render() {
     const placeholderItems = this.state.placeholder.map((name, index) => {
       return <Placeholder name={name.name} key={name.id} />;
     });
     return (
       <div>
-        {placeholderItems}
-        <button onClick={this.handleClick}>Add</button>
+        <div className='name'>
+          <Placeholder name='Your Name' />
+        </div>
+        <div className='contact-details'>
+          <Placeholder name='Telephone Number' />
+          <Placeholder name='Email' />
+          <Placeholder name='Website' />
+        </div>
       </div>
     );
   }
