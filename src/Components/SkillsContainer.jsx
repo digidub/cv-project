@@ -24,6 +24,8 @@ class SkillsContainer extends React.Component {
   };
 
   render() {
+    let canEdit;
+    if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add</button>;
     const placeholderItems = this.state.placeholder.map((name, index) => {
       return <Placeholder name={name.name} key={name.id} canEdit={this.props.canEdit} />;
     });
@@ -31,7 +33,7 @@ class SkillsContainer extends React.Component {
       <div className='skills-container'>
         <div className='skills-heading'>
           <h2>Skills</h2>
-          <button onClick={this.handleClick}>Add</button>
+          {canEdit}
         </div>
         <div className='skills-list'>{placeholderItems}</div>
       </div>

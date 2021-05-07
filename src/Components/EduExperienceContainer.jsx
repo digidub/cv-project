@@ -17,6 +17,8 @@ class EduExperienceContainer extends React.Component {
   };
 
   render() {
+    let canEdit;
+    if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add</button>;
     const edus = this.state.edus.map((edu) => {
       return <EduContainer key={edu.id} canEdit={this.props.canEdit} />;
     });
@@ -24,7 +26,7 @@ class EduExperienceContainer extends React.Component {
       <div className='edu-experience-container'>
         <div className='edu-experience-heading'>
           <h2>Education History</h2>
-          <button onClick={this.handleClick}>Add</button>
+          {canEdit}
         </div>
         <div className='edu-list'>{edus}</div>
       </div>
