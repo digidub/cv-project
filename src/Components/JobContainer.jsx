@@ -1,6 +1,7 @@
 import React from 'react';
 import maxKeyInArray from './AppLogic';
 import Placeholder from './ValuePlaceholder';
+import './JobContainer.css';
 
 class JobContainer extends React.Component {
   constructor(props) {
@@ -26,12 +27,20 @@ class JobContainer extends React.Component {
       return <Placeholder key={role.id} name={role.name} edit={role.edit ?? false} />;
     });
     return (
-      <div>
-        <Placeholder name='Enter Job Name' />
-        <Placeholder name='Enter Job Title' />
-        <Placeholder name='From' />
-        <Placeholder name='To' />
-        {roles}
+      <div className='job-container'>
+        <div className='job-heading'>
+          <div className='job-title'>
+            <Placeholder name='Enter Company Name' />
+            <p> - </p>
+            <Placeholder name='Enter Job Title' />
+          </div>
+          <div className='job-from-to'>
+            <Placeholder name='From' />
+            <p> - </p>
+            <Placeholder name='To' />
+          </div>
+        </div>
+        <div className='job-roles'>{roles}</div>
         <button onClick={this.handleClick}>Add</button>
       </div>
     );
