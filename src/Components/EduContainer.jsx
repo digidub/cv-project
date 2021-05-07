@@ -11,13 +11,13 @@ class EduContainer extends React.Component {
   handleClick = () => {
     const x = maxKeyInArray(this.state.quals);
     this.setState((state) => ({
-      quals: state.quals.concat({ id: x + 1, name: 'Enter details of qualifications here' }),
+      quals: state.quals.concat({ id: x + 1, name: 'Enter details of qualifications here', edit: 'true' }),
     }));
   };
 
   render() {
     const quals = this.state.quals.map((qual) => {
-      return <Placeholder key={qual.id} name={qual.name} />;
+      return <Placeholder key={qual.id} name={qual.name} edit={qual.edit ?? false} />;
     });
     return (
       <div>
