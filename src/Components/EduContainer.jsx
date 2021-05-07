@@ -1,6 +1,7 @@
 import React from 'react';
 import maxKeyInArray from './AppLogic';
 import Placeholder from './ValuePlaceholder';
+import './EduContainer.css';
 
 class EduContainer extends React.Component {
   constructor(props) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import maxKeyInArray from './AppLogic';
 import EduContainer from './EduContainer';
+import './EduExperienceContainer.css';
 
 class EduExperienceContainer extends React.Component {
   constructor(props) {
@@ -20,12 +21,12 @@ class EduExperienceContainer extends React.Component {
       return <EduContainer key={edu.id} />;
     });
     return (
-      <div>
-        <div>
+      <div className='edu-experience-container'>
+        <div className='edu-experience-heading'>
           <h2>Education History</h2>
+          <button onClick={this.handleClick}>Add</button>
         </div>
-        <div>{edus}</div>
-        <button onClick={this.handleClick}>Add</button>
+        <div className='edu-list'>{edus}</div>
       </div>
     );
   }
