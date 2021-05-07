@@ -1,31 +1,16 @@
 import React from 'react';
 import Placeholder from './ValuePlaceholder';
-import maxKeyInArray from './AppLogic';
+import './TitleContainer.css';
 
 class TitleContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      placeholder: [
-        { id: 1, name: 'Enter Name Here' },
-        { id: 2, name: 'Telephone Number' },
-        { id: 3, name: 'Email' },
-        { id: 4, name: 'Website' },
-      ],
-    };
-  }
-
   render() {
-    const placeholderItems = this.state.placeholder.map((name, index) => {
-      return <Placeholder name={name.name} key={name.id} />;
-    });
     return (
-      <div>
+      <div className='title-container'>
         <div className='name'>
-          <Placeholder name='Your Name' />
+          <Placeholder name='Your Name' className='heading' />
         </div>
         <div className='contact-details'>
-          <Placeholder name='Telephone Number' />
+          <Placeholder name='Telephone' />
           <Placeholder name='Email' />
           <Placeholder name='Website' />
         </div>
