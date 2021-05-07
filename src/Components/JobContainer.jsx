@@ -23,6 +23,8 @@ class JobContainer extends React.Component {
   };
 
   render() {
+    let canEdit;
+    if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add Row</button>;
     const roles = this.state.roles.map((role) => {
       return <Placeholder key={role.id} name={role.name} edit={role.edit ?? false} canEdit={this.props.canEdit} />;
     });
@@ -41,7 +43,7 @@ class JobContainer extends React.Component {
           </div>
         </div>
         <div className='job-roles'>{roles}</div>
-        <button onClick={this.handleClick}>Add</button>
+        {canEdit}
       </div>
     );
   }

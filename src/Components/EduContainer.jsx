@@ -17,6 +17,8 @@ class EduContainer extends React.Component {
   };
 
   render() {
+    let canEdit;
+    if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add Row</button>;
     const quals = this.state.quals.map((qual) => {
       return <Placeholder key={qual.id} name={qual.name} edit={qual.edit ?? false} canEdit={this.props.canEdit} />;
     });
@@ -35,7 +37,7 @@ class EduContainer extends React.Component {
           </div>
         </div>
         <div className='edu-roles'>{quals}</div>
-        <button onClick={this.handleClick}>Add Row</button>
+        {canEdit}
       </div>
     );
   }
