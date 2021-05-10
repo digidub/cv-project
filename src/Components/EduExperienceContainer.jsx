@@ -9,18 +9,27 @@ class EduExperienceContainer extends React.Component {
     this.state = { edus: [{ id: 1 }] };
   }
 
-  handleClick = () => {
-    const x = maxKeyInArray(this.state.edus);
+  handleAdd = () => {
+    let x;
+    if (this.state.edus.length < 1) x = 1;
+    else x = maxKeyInArray(this.state.edus);
     this.setState((state) => ({
       edus: state.edus.concat({ id: x + 1 }),
     }));
   };
 
+  handleDelete = (e) => {
+    const toDelete = parseInt(e.target.parentNode.parentNode.parentNode.dataset.key);
+    this.setState((state) => ({
+      edus: state.edus.filter((edu) => edu.id !== toDelete),
+    }));
+  };
+
   render() {
     let canEdit;
-    if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add</button>;
+    if (this.props.canEdit) canEdit = <button onClick={this.handleAdd}>Add</button>;
     const edus = this.state.edus.map((edu) => {
-      return <EduContainer key={edu.id} canEdit={this.props.canEdit} />;
+      return <EduContainer key={edu.id} dataKey={edu.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />;
     });
     return (
       <div className='edu-experience-container'>
