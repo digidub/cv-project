@@ -28,14 +28,14 @@ class EduContainer extends React.Component {
       <div className='edu-container' data-key={this.props.dataKey}>
         <div className='edu-heading'>
           <div className='edu-title'>
-            <Placeholder name='Enter Education Body' canEdit={this.props.canEdit} />
+            <Placeholder name='Enter Education Body' canEdit={this.props.canEdit} class='b' />
             <p> - </p>
-            <Placeholder name='Enter Qualification Name' canEdit={this.props.canEdit} />
+            <Placeholder name='Enter Qualification Name' canEdit={this.props.canEdit} class='b' />
           </div>
           <div className='edu-from-to'>
-            <Placeholder name='From' canEdit={this.props.canEdit} />
+            <Placeholder name='From' canEdit={this.props.canEdit} class='b' />
             <p> - </p>
-            <Placeholder name='To' canEdit={this.props.canEdit} />
+            <Placeholder name='To' canEdit={this.props.canEdit} class='b' />
             {canDelete}
           </div>
         </div>
