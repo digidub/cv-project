@@ -19,9 +19,9 @@ class WorkExperienceContainer extends React.Component {
   };
 
   handleDelete = (e) => {
-    const toDelete = e.target.parentNode.parentNode.parentNode.dataset.key;
+    const toDelete = parseInt(e.target.parentNode.parentNode.parentNode.dataset.key);
     this.setState((state) => ({
-      jobs: state.jobs.filter((job) => job.id != toDelete),
+      jobs: state.jobs.filter((job) => job.id !== toDelete),
     }));
   };
 
