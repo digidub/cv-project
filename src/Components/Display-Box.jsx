@@ -1,5 +1,5 @@
 import React from 'react';
-import './ValuePlaceHolder.css';
+import './ValuePlaceholder.css';
 
 class DisplayBox extends React.Component {
   constructor(props) {
