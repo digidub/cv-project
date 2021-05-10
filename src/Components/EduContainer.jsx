@@ -9,20 +9,40 @@ class EduContainer extends React.Component {
     this.state = { quals: [{ id: 1, name: 'Enter details of qualifications here' }] };
   }
 
-  handleClick = () => {
+  handleAdd = () => {
     const x = maxKeyInArray(this.state.quals);
     this.setState((state) => ({
       quals: state.quals.concat({ id: x + 1, name: 'Enter details of qualifications here', edit: 'true' }),
     }));
   };
 
+  handleDelete = (e) => {
+    const toDelete = parseInt(e.target.parentNode.dataset.key);
+    console.log(toDelete);
+    this.setState((state) => ({
+      quals: state.quals.filter((qual) => qual.id !== toDelete),
+    }));
+  };
+
   render() {
     let canEdit;
     let canDelete;
-    if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add Row</button>;
+    if (this.props.canEdit) canEdit = <button onClick={this.handleAdd}>Add Row</button>;
     if (this.props.canEdit && this.props.canDelete) canDelete = <button onClick={this.props.canDelete}>Delete Edu</button>;
     const quals = this.state.quals.map((qual) => {
-      return <Placeholder key={qual.id} name={qual.name} edit={qual.edit ?? false} canEdit={this.props.canEdit} canDelete={this.props.canDelete} />;
+      return (
+        <div className='list-item' key={qual.id}>
+          <li></li>
+          <Placeholder
+            key={qual.id}
+            dataKey={qual.id}
+            name={qual.name}
+            edit={qual.edit ?? false}
+            canEdit={this.props.canEdit}
+            canDelete={this.handleDelete}
+          />
+        </div>
+      );
     });
     return (
       <div className='edu-container' data-key={this.props.dataKey}>
