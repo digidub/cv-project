@@ -34,3 +34,8 @@
 .heading {
   font-weight: bolder;
 }
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+}
