@@ -17,7 +17,7 @@ class DisplayBox extends React.Component {
     let canEdit;
     if (this.props.canEdit) canEdit = <button onClick={this.props.edit}>edit</button>;
     return (
-      <div>
+      <div className={this.props.class}>
         {this.props.value}
         {canEdit}
       </div>

@@ -24,9 +24,9 @@ class Placeholder extends React.Component {
 
   render() {
     return this.state.editMode ? (
-      <EditBox original={this.state.value} save={this.handleSave} />
+      <EditBox original={this.state.value} save={this.handleSave} class={this.props.class} />
     ) : (
-      <DisplayBox value={this.state.value} edit={this.handleClick} canEdit={this.props.canEdit} />
+      <DisplayBox value={this.state.value} edit={this.handleClick} canEdit={this.props.canEdit} class={this.props.class} />
     );
   }
 }
