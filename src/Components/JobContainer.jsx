@@ -22,13 +22,29 @@ class JobContainer extends React.Component {
     }));
   };
 
+  handleDelete = (e) => {
+    const toDelete = parseInt(e.target.parentNode.dataset.key);
+    this.setState((state) => ({
+      roles: state.roles.filter((role) => role.id !== toDelete),
+    }));
+  };
+
   render() {
     let canEdit;
     let canDelete;
     if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add Row</button>;
-    if (this.props.canEdit && this.props.canDelete) canDelete = <button onClick={this.props.canDelete}>Delete Job</button>;
+    if (this.props.canEdit && this.props.canDelete) canDelete = <button onClick={this.canDelete}>Delete Job</button>;
     const roles = this.state.roles.map((role) => {
-      return <Placeholder key={role.id} name={role.name} edit={role.edit ?? false} canEdit={this.props.canEdit} />;
+      return (
+        <Placeholder
+          key={role.id}
+          dataKey={role.id}
+          name={role.name}
+          edit={role.edit ?? false}
+          canEdit={this.props.canEdit}
+          canDelete={this.handleDelete}
+        />
+      );
     });
     return (
       <div className='job-container' data-key={this.props.dataKey}>
