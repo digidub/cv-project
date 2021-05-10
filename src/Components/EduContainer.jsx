@@ -18,12 +18,14 @@ class EduContainer extends React.Component {
 
   render() {
     let canEdit;
+    let canDelete;
     if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add Row</button>;
+    if (this.props.canEdit && this.props.canDelete) canDelete = <button onClick={this.props.canDelete}>Delete Edu</button>;
     const quals = this.state.quals.map((qual) => {
-      return <Placeholder key={qual.id} name={qual.name} edit={qual.edit ?? false} canEdit={this.props.canEdit} />;
+      return <Placeholder key={qual.id} name={qual.name} edit={qual.edit ?? false} canEdit={this.props.canEdit} canDelete={this.props.canDelete} />;
     });
     return (
-      <div className='edu-container'>
+      <div className='edu-container' data-key={this.props.dataKey}>
         <div className='edu-heading'>
           <div className='edu-title'>
             <Placeholder name='Enter Education Body' canEdit={this.props.canEdit} />
@@ -34,6 +36,7 @@ class EduContainer extends React.Component {
             <Placeholder name='From' canEdit={this.props.canEdit} />
             <p> - </p>
             <Placeholder name='To' canEdit={this.props.canEdit} />
+            {canDelete}
           </div>
         </div>
         <div className='edu-roles'>{quals}</div>
