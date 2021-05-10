@@ -33,31 +33,34 @@ class JobContainer extends React.Component {
     let canEdit;
     let canDelete;
     if (this.props.canEdit) canEdit = <button onClick={this.handleClick}>Add Row</button>;
-    if (this.props.canEdit && this.props.canDelete) canDelete = <button onClick={this.canDelete}>Delete Job</button>;
+    if (this.props.canEdit && this.props.canDelete) canDelete = <button onClick={this.props.canDelete}>Delete Job</button>;
     const roles = this.state.roles.map((role) => {
       return (
-        <Placeholder
-          key={role.id}
-          dataKey={role.id}
-          name={role.name}
-          edit={role.edit ?? false}
-          canEdit={this.props.canEdit}
-          canDelete={this.handleDelete}
-        />
+        <div className='list-item' key={role.id}>
+          <li></li>
+          <Placeholder
+            key={role.id}
+            dataKey={role.id}
+            name={role.name}
+            edit={role.edit ?? false}
+            canEdit={this.props.canEdit}
+            canDelete={this.handleDelete}
+          />
+        </div>
       );
     });
     return (
       <div className='job-container' data-key={this.props.dataKey}>
         <div className='job-heading'>
           <div className='job-title'>
-            <Placeholder name={this.props.name} canEdit={this.props.canEdit} />
+            <Placeholder name={this.props.name} canEdit={this.props.canEdit} class='b' />
             <p> - </p>
-            <Placeholder name='Enter Company Name' canEdit={this.props.canEdit} />
+            <Placeholder name='Enter Company Name' canEdit={this.props.canEdit} class='b' />
           </div>
           <div className='job-from-to'>
-            <Placeholder name='From' canEdit={this.props.canEdit} />
+            <Placeholder name='From' canEdit={this.props.canEdit} class='b' />
             <p> - </p>
-            <Placeholder name='To' canEdit={this.props.canEdit} />
+            <Placeholder name='To' canEdit={this.props.canEdit} class='b' />
             {canDelete}
           </div>
         </div>
