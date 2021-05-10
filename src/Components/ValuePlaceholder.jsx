@@ -32,6 +32,7 @@ class Placeholder extends React.Component {
         canEdit={this.props.canEdit}
         class={this.props.class}
         canDelete={this.props.canDelete}
+        dataKey={this.props.dataKey}
       />
     );
   }
