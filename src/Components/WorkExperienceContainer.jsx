@@ -2,11 +2,13 @@ import React from 'react';
 import maxKeyInArray from './AppLogic';
 import JobContainer from './JobContainer';
 import './WorkExperienceContainer.css';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 class WorkExperienceContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = { jobs: [{ id: 1, name: 'Enter Job Title' }] };
+    this.wrapper = React.createRef();
   }
 
   handleAdd = () => {
@@ -28,16 +30,20 @@ class WorkExperienceContainer extends React.Component {
   render() {
     let canEdit;
     if (this.props.canEdit) canEdit = <button onClick={this.handleAdd}>Add</button>;
-    const jobs = this.state.jobs.map((job) => {
-      return <JobContainer name={job.name} key={job.id} dataKey={job.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />;
-    });
+
     return (
       <div className='work-experience-container'>
         <div className='work-experience-heading'>
           <h2>Work Experience</h2>
           {canEdit}
         </div>
-        <div className='jobs-list'>{jobs}</div>
+        <TransitionGroup>
+          {this.state.jobs.map((job) => (
+            <CSSTransition key={job.id} ref={this.wrapper} unmountOnExit classNames='example' timeout={500}>
+              <JobContainer name={job.name} key={job.id} dataKey={job.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
       </div>
     );
   }
