@@ -2,6 +2,7 @@ import React from 'react';
 import maxKeyInArray from './AppLogic';
 import EduContainer from './EduContainer';
 import './EduExperienceContainer.css';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 class EduExperienceContainer extends React.Component {
   constructor(props) {
@@ -28,16 +29,19 @@ class EduExperienceContainer extends React.Component {
   render() {
     let canEdit;
     if (this.props.canEdit) canEdit = <button onClick={this.handleAdd}>Add</button>;
-    const edus = this.state.edus.map((edu) => {
-      return <EduContainer key={edu.id} dataKey={edu.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />;
-    });
     return (
       <div className='edu-experience-container'>
         <div className='edu-experience-heading'>
           <h2>Education History</h2>
           {canEdit}
         </div>
-        <div className='edu-list'>{edus}</div>
+        <TransitionGroup className='edu-list'>
+          {this.state.edus.map((edu) => (
+            <CSSTransition key={edu.id} ref={this.wrapper} unmountOnExit classNames='job' timeout={300}>
+              <EduContainer name={edu.name} key={edu.id} dataKey={edu.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
       </div>
     );
   }
