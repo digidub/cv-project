@@ -6,7 +6,6 @@
   margin-left: auto;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid #aaa;
 }
 
 .edu-experience-heading {
@@ -25,4 +24,22 @@
 
 .heading {
   font-weight: bolder;
+}
+
+.job-enter {
+  opacity: 0.01;
+}
+
+.job-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.job-exit {
+  opacity: 1;
+}
+
+.job-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
