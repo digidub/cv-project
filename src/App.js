@@ -19,8 +19,9 @@ class App extends React.Component {
     return (
       <div className='app'>
         <div className='header'>
+          <span>Preview Mode</span>
           <Toggle defaultChecked={this.state.canEdit} onChange={this.handleChange} />
-          <span>Edit Mode?</span>
+          <span>Edit Mode</span>
         </div>
         <div className='body'>
           {React.Children.map(this.props.children, (child) => {
