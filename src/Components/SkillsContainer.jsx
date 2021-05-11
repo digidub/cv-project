@@ -2,6 +2,7 @@ import React from 'react';
 import Placeholder from './ValuePlaceholder';
 import maxKeyInArray from './AppLogic';
 import './SkillsContainer.css';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 class SkillsContainer extends React.Component {
   constructor(props) {
@@ -24,7 +25,6 @@ class SkillsContainer extends React.Component {
   };
 
   handleDelete = (e) => {
-    console.log(e);
     const toDelete = e.target.previousSibling.previousSibling.textContent;
     this.setState((state) => ({
       placeholder: state.placeholder.filter((word) => word.name !== toDelete),
@@ -34,16 +34,19 @@ class SkillsContainer extends React.Component {
   render() {
     let canEdit;
     if (this.props.canEdit) canEdit = <button onClick={this.handleAdd}>Add</button>;
-    const placeholderItems = this.state.placeholder.map((name, index) => {
-      return <Placeholder name={name.name} key={name.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />;
-    });
     return (
       <div className='skills-container'>
         <div className='skills-heading'>
           <h2>Skills</h2>
           {canEdit}
         </div>
-        <div className='skills-list'>{placeholderItems}</div>
+        <TransitionGroup className='skills-list'>
+          {this.state.placeholder.map((name) => (
+            <CSSTransition key={name.id} unmountOnExit classNames='job' timeout={300}>
+              <Placeholder name={name.name} key={name.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />
+            </CSSTransition>
+          ))}
+        </TransitionGroup>
       </div>
     );
   }
