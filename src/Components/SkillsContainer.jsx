@@ -42,7 +42,7 @@ class SkillsContainer extends React.Component {
         </div>
         <TransitionGroup className='skills-list'>
           {this.state.placeholder.map((name) => (
-            <CSSTransition key={name.id} unmountOnExit classNames='job' timeout={300}>
+            <CSSTransition key={name.id} unmountOnExit classNames='name' timeout={300}>
               <Placeholder name={name.name} key={name.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />
             </CSSTransition>
           ))}
