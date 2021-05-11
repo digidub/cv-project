@@ -10,6 +10,6 @@
   border: 1px solid #aaa;
   border-radius: 2px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 1em;
+  padding: 0 1em 1em 1em;
   min-height: 90vh;
 }
