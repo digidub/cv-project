@@ -1,4 +1,5 @@
 import React from 'react';
+import './ValuePlaceholder.css';
 
 class EditBox extends React.Component {
   constructor(props) {
@@ -34,7 +35,7 @@ class EditBox extends React.Component {
             onFocus={(e) => e.target.select()}
             className={this.props.class}
           />
-          <input type='submit' onClick={this.props.save} value='save' />
+          <input type='submit' onClick={this.props.save} className='save-button' />
         </form>
       </div>
     );
