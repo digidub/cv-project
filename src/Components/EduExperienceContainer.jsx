@@ -37,7 +37,7 @@ class EduExperienceContainer extends React.Component {
         </div>
         <TransitionGroup className='edu-list'>
           {this.state.edus.map((edu) => (
-            <CSSTransition key={edu.id} ref={this.wrapper} unmountOnExit classNames='job' timeout={300}>
+            <CSSTransition key={edu.id} unmountOnExit classNames='job' timeout={300}>
               <EduContainer name={edu.name} key={edu.id} dataKey={edu.id} canEdit={this.props.canEdit} canDelete={this.handleDelete} />
             </CSSTransition>
           ))}
