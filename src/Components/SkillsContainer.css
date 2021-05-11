@@ -26,3 +26,21 @@
 .heading {
   font-weight: bolder;
 }
+
+.name-enter {
+  opacity: 0.01;
+}
+
+.name-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.name-exit {
+  opacity: 1;
+}
+
+.name-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
