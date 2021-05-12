@@ -28,7 +28,7 @@ class WorkExperienceContainer extends React.Component {
 
   render() {
     let canEdit;
-    if (this.props.canEdit) canEdit = <button onClick={this.handleAdd}>Add</button>;
+    if (this.props.canEdit) canEdit = <button onClick={this.handleAdd} className='add-button'></button>;
     return (
       <div className='work-experience-container'>
         <div className='work-experience-heading'>
