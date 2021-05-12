@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/cv-project/static/css/main.c68a1edc.chunk.css",
+    "main.js": "/cv-project/static/js/main.66699cfe.chunk.js",
+    "main.js.map": "/cv-project/static/js/main.66699cfe.chunk.js.map",
+    "runtime-main.js": "/cv-project/static/js/runtime-main.20ddf127.js",
+    "runtime-main.js.map": "/cv-project/static/js/runtime-main.20ddf127.js.map",
+    "static/css/2.65aefc5a.chunk.css": "/cv-project/static/css/2.65aefc5a.chunk.css",
+    "static/js/2.54d0f9ec.chunk.js": "/cv-project/static/js/2.54d0f9ec.chunk.js",
+    "static/js/2.54d0f9ec.chunk.js.map": "/cv-project/static/js/2.54d0f9ec.chunk.js.map",
+    "index.html": "/cv-project/index.html",
+    "static/css/2.65aefc5a.chunk.css.map": "/cv-project/static/css/2.65aefc5a.chunk.css.map",
+    "static/css/main.c68a1edc.chunk.css.map": "/cv-project/static/css/main.c68a1edc.chunk.css.map",
+    "static/js/2.54d0f9ec.chunk.js.LICENSE.txt": "/cv-project/static/js/2.54d0f9ec.chunk.js.LICENSE.txt",
+    "static/media/WorkExperienceContainer.css": "/cv-project/static/media/add.7cf0b0e6.svg",
+    "static/media/ValuePlaceholder.css": "/cv-project/static/media/save.784b623b.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.20ddf127.js",
+    "static/css/2.65aefc5a.chunk.css",
+    "static/js/2.54d0f9ec.chunk.js",
+    "static/css/main.c68a1edc.chunk.css",
+    "static/js/main.66699cfe.chunk.js"
+  ]
+}
