@@ -10,9 +10,9 @@ class TitleContainer extends React.Component {
           <Placeholder name='Your Name' className='heading' canEdit={this.props.canEdit} class='h2' />
         </div>
         <div className='contact-details'>
-          <Placeholder name='Telephone' canEdit={this.props.canEdit} />
-          <Placeholder name='Email' canEdit={this.props.canEdit} />
-          <Placeholder name='Website' canEdit={this.props.canEdit} />
+          <Placeholder name='Telephone' canEdit={this.props.canEdit} class='contact' />
+          <Placeholder name='Email' canEdit={this.props.canEdit} class='contact' />
+          <Placeholder name='Website' canEdit={this.props.canEdit} class='contact' />
         </div>
       </div>
     );
