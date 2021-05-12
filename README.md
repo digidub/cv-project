@@ -2,6 +2,8 @@
 
 A CV Generator app built with React and animated with CSS Transition Group.
 
+Link to live project: <https://digidub.github.io/cv-project/>
+
 ## Features
 
 - Edit/Preview Mode
@@ -11,6 +13,7 @@ A CV Generator app built with React and animated with CSS Transition Group.
 ## Learning Outcomes
 
 - JSX
+  - HTML 'Elements' syntactic sugar for JavaScript objects
 - React ES6 Class Syntax
 - Rendering elements
   - Understanding the relationship between state and rendering
